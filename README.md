@@ -2,7 +2,7 @@ Project Name: Mediease - Personalized Health and Fitness Web Application.
 
 OVERVIEW:
 
-Mediease is a web application designed to provide users with personalized health, fitness, and nutrition insights. The project was developed as part of the GEMINI API Hackathon by our team, Quantums. The application leverages the power of the Gemini API to deliver tailored content based on user queries and preferences.
+Mediease is a web application designed to provide users with personalized health, fitness, and nutrition insights. The project was developed as part of the GEMINI API Hackathon by our team, Vortex. The application leverages the power of the Gemini API to deliver tailored content based on user queries and preferences.
 
 
 Features:
