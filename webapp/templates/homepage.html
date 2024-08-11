@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://media.discordapp.net/attachments/1143051446489731154/1195279835736580136/WhatsApp_Image_2024-01-11_at_23.05.11_9c267feb-removebg-preview.png?ex=65b36a18&is=65a0f518&hm=8b6a8501054f599719b4216d004c5cdb73d5da92a91c0a7e733690411029df4b&=&format=webp&quality=lossless&width=666&height=558">
+    <title>Home Page | MEDIEASE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        body {
+            margin: 0;
+            background-image: url('https://cdn.discordapp.com/attachments/1143051446489731154/1195279836403482634/luxa.org-opacity-changed-Screenshot_2024-01-11_231442.png?ex=65eac918&is=65d85418&hm=5a633130f957b7013866a590964b30fdcb41e738b73f21a7d8b71c7aecfb1bde&');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+            background-color: #ffffff;
+            box-sizing: border-box;
+        }
+        .logo-title {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+        .header-title {
+            display: block;
+        }
+        h1 {
+            margin: 0;
+            font-size: 3rem;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #00a6ff;
+        }
+        li {
+            float: left;
+        }
+        li a {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.4rem;
+            padding: 14px 16px;
+            transition: background-color 0.3s;
+        }
+        li a:hover {
+            background-color: #ffffff;
+            color: #00a6ff;
+        }
+        .login-btn,
+.signup-btn {
+    background-color: #00a6ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.login-btn:hover,
+.signup-btn:hover {
+    background-color: #ececec;
+            color: #00a6ff;
+            transition: 0.5s;
+}
+        .home-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+        .sub-menu {
+            display: none;
+            position: absolute;
+            background-color: #00a6ff;
+            z-index: 1;
+        }
+        li:hover .sub-menu {
+            display: block;
+        }
+        .sub-menu li {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+        .sub-menu li a {
+            padding: 12px 16px;
+            color: rgb(255, 255, 255);
+        }
+        .sub-menu li a:hover {
+            background-color: #ffffff;
+            color: #00a6ff;
+        }
+        .body-title{
+            text-align: center;
+        }
+        .wrapper {
+    text-align: center;
+  }
+  .header-container {
+    font-size: xx-large;
+    font-family: arial, sans-serif;
+    font-weight: bolder;
+    margin-top: 0px;
+    margin-bottom: 6px;
+  }
+            .wrapper .outer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wrapper .card{
+    top: 330px;
+    background: #fff;
+    width: 430px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    justify-content: space-between;
+    border-radius: 100px 20px 20px 100px;
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+    animation: animate 15s linear infinite;
+    animation-delay: calc(3s * var(--delay));
+  }
+  .outer:hover .card{
+    animation-play-state: paused;
+  }
+  .wrapper .card:last-child{
+    animation-delay: calc(-3s * var(--delay));
+  }
+  @keyframes animate {
+    0%{
+      opacity: 0;
+      transform: translateY(100%) scale(0.5);
+    }
+    5%, 20%{
+      opacity: 0.4;
+      transform: translateY(100%) scale(0.7);
+    }
+    25%, 40%{
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0%) scale(1);
+    }
+    45%, 60%{
+      opacity: 0.4;
+      transform: translateY(-100%) scale(0.7);
+    }
+    65%, 100%{
+      opacity: 0;
+      transform: translateY(-100%) scale(0.5);
+    }
+  }
+  .card .content{
+    display: flex;
+    align-items: center;
+  }
+  .wrapper .card .img{
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    left: -5px;
+    background: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+  }
+  .card .img img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .card .details{
+    margin-left: 80px;
+  }
+  .details span{
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .card a{
+    text-decoration: none;
+    padding: 7px 18px;
+    border-radius: 25px;
+    color: #fff;
+    background: linear-gradient(to bottom, #bea2e7 0%, #86b7e7 100%);
+    transition: all 0.3s ease;
+  }
+  .card a:hover{
+    transform: scale(0.94);
+  }
+  .dark-gray-box {
+    background-color: #4e4e4e;
+    width: auto;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dgb-container {
+    display: flex;
+    align-items: center;
+    width: 80%; /* Adjust as needed */
+    justify-content: space-between;
+}
+
+.dgbtitle {
+    color: #fff;
+    font-size: 2rem; /* Adjust the font size if needed */
+}
+
+.button-group {
+    display: flex;
+    gap: 20px;
+}
+
+.login2, .signup2 {
+    background-color: #00a6ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.login2:hover, .signup2:hover {
+    background-color: #ececec;
+    color: #00a6ff;
+    transition: 0.5s;
+}
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .footer-left, .footer-right {
+            flex: 1;
+            text-align: left;
+        }
+        footer h3 {
+            border-bottom: 2px solid #fff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+        .social-icon {
+            width: 25px;
+            height: 25px;
+            margin-right: 5px;
+        }
+        .features-section {
+            padding: 80px 40px;
+            background-color: #ffffff;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .features-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #00a6ff;
+            margin-bottom: 40px;
+        }
+
+        .features-section .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .features-section .feature-item {
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px 20px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .features-section .feature-item:hover {
+            transform: translateY(-10px);
+            background-color: #e0f7ea;
+        }
+
+        .features-section .feature-item i {
+            font-size: 3rem;
+            color: #00a6ff;
+            margin-bottom: 16px;
+        }
+
+        .features-section .feature-item h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #1F2937;
+            margin-bottom: 16px;
+        }
+
+        .features-section .feature-item p {
+            color: #6B7280;
+            font-size: 1rem;
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 20px;
+            }
+
+            header .logo span {
+                font-size: 2rem;
+            }
+
+            main h1 {
+                font-size: 2.5rem;
+            }
+
+            main p {
+                font-size: 1.25rem;
+            }
+
+            .features-section h2 {
+                font-size: 2rem;
+            }
+
+            .features-section .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-title">
+            <img src='https://cdn-icons-png.flaticon.com/512/4807/4807695.png' alt="MEDIEASE Logo" class="logo">
+            <div class="header-title">
+                <h1>MEDIEASE</h1>
+            </div>
+        </div>
+        <nav>
+            <a href="login" class="login-btn">Login</a>
+            <a href="signup" class="signup-btn">Signup</a>
+        </nav>
+    </header>
+    <ul>
+        <li>
+            <nav class="hel">
+            <a href="/homepage">
+                <img src='https://cdn-icons-png.flaticon.com/512/9385/9385212.png' alt="Home Icon" class="home-icon">
+                Home
+            </a>
+        </li>
+        <li>
+            <a class="100" href="#">
+                <img src='https://cdn-icons-png.flaticon.com/512/2875/2875035.png' alt="Home Icon" class="home-icon">
+                 Doctor Consultancy 
+                </a>
+            <ul class="sub-menu">
+              <li><a href="/bookanappointment">Book an Appointment</a></li>
+              <li><a href="/virtualmeet">Virtual Meet</a></li>
+            </ul>
+        </li>
+        <li><a href="/userprofile"> User Profile </a></li>
+        <li><a href="#"> Fitness </a>
+        <ul class="sub-menu">
+            <li><a href="/walking">Walking</a></li>
+            <li><a href="/exercise">Exercise</a></li>
+            <li><a href="/">Mediease AI</a></li>
+            <li><a href="/waterdrop">Drinking Water</a></li>
+            <li><a href="/cycle">Cycling</a></li>
+            <li><a href="bodymassindex">BMI(Body Mass Index)</a></li>
+        </ul>
+    </li>
+        <li><a href="about"> 
+            <img src='https://cdn-icons-png.flaticon.com/512/52/52349.png' alt="Home Icon" class="home-icon">
+            About 
+        </a></li>
+        <li><a href="/contactus">
+            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+<lord-icon
+    src="https://cdn.lordicon.com/ojnjgkun.json"
+    trigger="hover"
+    style="width:27px;height:27px"
+    alt="Home Icon" class="home-icon">
+</lord-icon>         
+            Contact Us </a></li>
+    </nav>
+    <br>
+    </ul>  
+    <div class="wrapper">
+        <div class="header-container">
+        </div>
+        <div class="body-title">
+            <h1>OUR GOALS</h1>
+        </div>
+        <hr>
+        <br>
+        <br>
+        <br>
+        <br>
+          <div class="outer">
+            <div class="card" style="--delay:-1;">
+              <div class="content">
+                <div class="img"><img src="https://thumbs.dreamstime.com/b/blank-182026361.jpg" alt=""></div>
+                <div class="details">
+                  <span class="name">Virual meet</span>
+                  <p>Interact with Doctor from home</p>
+                </div>
+              </div>
+              <a href="virtualmeet">Explore</a>
+            </div>
+            <div class="card" style="--delay:0;">
+              <div class="content">
+                <div class="img"><img src="https://thumbs.dreamstime.com/z/vector-cartoon-dumbbell-fitness-gym-icon-comic-style-barbell-concept-illustration-pictogram-bodybuilding-sport-business-splash-124087156.jpg" alt=""></div>
+                <div class="details">
+                  <span class="name">Fitness</span>
+                  <p>Health is wealth </p>
+                </div>
+              </div>
+              <a href="/walking">Explore</a>
+            </div>
+            <div class="card" style="--delay:1;">
+              <div class="content">
+                <div class="img"><img src="https://www.rappler.com/tachyon/2023/08/cycling-towards-greener-cities.jpg" alt=""></div>
+                <div class="details">
+                  <span class="name">Cycling</span>
+                  <p> Make a Ride </p>
+                </div>
+              </div>
+              <a href="/cycle">Explore</a>
+            </div>
+            <div class="card" style="--delay:2;">
+              <div class="content">
+                <div class="img"><img src="https://imgs.search.brave.com/yAAM7eF6yrGS5bsDJ3SMaY_XbR93Is2hJ8DUdOcbaWk/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAyLzE3LzUxLzY3/LzM2MF9GXzIxNzUx/Njc3MF9uSGpDSzND/ODJCMlpVQzNKQjNx/UXM4VzJCR0xIeFpm/YS5qcGc" alt=""></div>
+                <div class="details">
+                  <span class="name">MEDIEASE AI</span>
+                  <p>Explore our Mediease AI</p>
+                </div>
+              </div>
+              <a href="/">Explore</a>
+            </div>
+            <div class="card" style="--delay:2;">
+              <div class="content">
+                <div class="img"><img src="https://cdn.discordapp.com/attachments/1143051446489731154/1211319605948317716/download.jpg?ex=65edc44b&is=65db4f4b&hm=cc8776772e6599e24cda5c1fa560e6f2ab7a169d6621a88c8c81bb38c61b7e7d&" alt=""></div>
+                <div class="details">
+                  <span class="name">Body mass index</span>
+                  <p>Calculate Your BMI</p>
+                </div>
+              </div>
+              <a href="/bodymassindex">Explore</a>
+            </div>
+          </div>
+        </div>
+        <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="dark-gray-box">
+  <div class="dgb-container">
+    <div class="dgbtitle">
+      <h1>Join us now</h1>
+    </div>
+    <div class="button-group">
+      <a href="login" class="login2">Login</a>
+      <a href="signup" class="signup2">Signup</a>
+    </div>
+  </div>
+</div>
+  <!-- Features Section -->
+  <section class="features-section">
+    <h2>Our Key Features</h2>
+    <div class="features-grid">
+        <div class="feature-item">
+            <i class="fas fa-stethoscope"></i>
+            <h3>Virtual Consultations</h3>
+            <p>Connect with medical professionals through secure virtual consultations, allowing for convenient and accessible healthcare from your home.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-ambulance"></i>
+            <h3>Emergency Services</h3>
+            <p>Access immediate support for emergencies with real-time alerts and connections to local emergency services.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-pills"></i>
+            <h3>Medication Management</h3>
+            <p>Keep track of your medications, receive reminders, and manage prescriptions with ease through our integrated system.</p>
+        </div>
+    </div>
+</section>
+
+    <footer class="c-footer">
+        <div class="footer-left">
+            <h3>Connect with Us</h3>
+            <!-- Add social media icons/links here -->
+            <a href="https://www.instagram.com/mediease/" target="_blank">
+                <img src='https://cdn.discordapp.com/attachments/1143051446489731154/1195393851251241100/icons8-facebook-96.png?ex=65b3d447&is=65a15f47&hm=82cdb082d07c7a9af8a97f46d5ec6d735e734660c156edcdb97ea0644e796b3f&' alt="Facebook Icon" class="social-icon">
+                Facebook
+            </a>
+            <br>
+            <a href="https://www.instagram.com/mediease/" target="_blank">
+                <img src='https://cdn.discordapp.com/attachments/1143051446489731154/1195395290526666762/icons8-instagram-96.png?ex=65b3d59e&is=65a1609e&hm=ef5337e5f7533123eed2d04b9968add557672e366bdf8d76e2486279fe31a111&' alt="Facebook Icon" class="social-icon">
+                Instagram
+            </a>
+            <br>
+            <a href="https://www.youtube.com/@Cure_Craft" target="_blank">
+                <img src='https://cdn.discordapp.com/attachments/1143051446489731154/1195395145961590784/icons8-youtube-96.png?ex=65b3d57c&is=65a1607c&hm=1962a969c1426c70edeab88ef8d9a3f1154bc0f4b64099cbcab7876ba843ab57&' alt="Facebook Icon" class="social-icon">
+                YouTube
+            </a>
+        </div>
+        <div class="footer-right">
+            <h3>Contact Information</h3>
+            <!-- Add contact information here -->
+            <p>Email: help.mediease@gmail.com</p>
+            <p>Phone: +91 76010 69687, +91 81215 82817</p>
+        </div>
+    </footer>
+</body>
+</html>
