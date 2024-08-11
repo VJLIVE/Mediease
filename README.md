@@ -46,7 +46,7 @@ Team:
 • Github - 
 3) Kadimi Jaswanth - Frontend Developer/ Editor
 • LinkedIn - https://www.linkedin.com/in/kadimi-jaswanth-347952289/
-• Github - 
+• Github - https://github.com/KadimiJaswanth
 4) Mukku Raghavendra - API Integration
 • LinkedIn - https://www.linkedin.com/in/mukku-raghavendra-18aa79290/
 • Github - 
