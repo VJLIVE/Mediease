@@ -43,10 +43,10 @@ Team:
 • Github - https://github.com/VJLIVE
 2) Adithya Pathakoti - Frontend Developer/ Social Media Outreach
 • LinkedIn - https://www.linkedin.com/in/adithya-pathakoti-26024a297/
-• Github - 
+• Github - https://github.com/AdithyaPathakoti
 3) Kadimi Jaswanth - Frontend Developer/ Editor
 • LinkedIn - https://www.linkedin.com/in/kadimi-jaswanth-347952289/
 • Github - https://github.com/KadimiJaswanth
 4) Mukku Raghavendra - API Integration
 • LinkedIn - https://www.linkedin.com/in/mukku-raghavendra-18aa79290/
-• Github - 
+• Github - https://github.com/RAGHU1242
