@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile | MEDIEASE</title>
+    <style>
+        body {
+            margin: 0;
+            background-image: url('https://cdn.discordapp.com/attachments/1143051446489731154/1195279836403482634/luxa.org-opacity-changed-Screenshot_2024-01-11_231442.png?ex=65eac918&is=65d85418&hm=5a633130f957b7013866a590964b30fdcb41e738b73f21a7d8b71c7aecfb1bde&');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+            background-color: #ffffff;
+            box-sizing: border-box;
+        }
+        .logo-title {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+        .header-title {
+            display: block;
+        }
+        h1 {
+            margin: 0;
+            font-size: 3rem;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #00a6ff;
+        }
+        li {
+            float: left;
+        }
+        li a {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.4rem;
+            padding: 14px 16px;
+            transition: background-color 0.3s;
+        }
+        li a:hover {
+            background-color: #0078a0;
+        }
+        .login-btn,
+.signup-btn {
+    background-color: #00a6ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-right: 10px;
+    text-decoration: none; /* Add this line to remove underlines */
+}
+.login-btn:hover,
+.signup-btn:hover {
+    background-color: #007c9a;
+}
+        .home-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+        .sub-menu {
+            display: none;
+            position: absolute;
+            background-color: #00a6ff;
+            z-index: 1;
+        }
+        li:hover .sub-menu {
+            display: block;
+        }
+        .sub-menu li {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+        .sub-menu li a {
+            padding: 12px 16px;
+            color: white;
+        }
+        .sub-menu li a:hover {
+            background-color: #0078a0;
+        }
+
+        /* Profile Box and Info Styling */
+        .profile-box {
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.profile-info div {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-info label {
+    display: inline-block;
+    width: 100px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.profile-info input {
+    padding: 10px;
+    font-size: 1rem;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.update-btn {
+    background-color: #00a6ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 1rem;
+    height: 42px; /* Matches the height of the login/signup buttons */
+    margin-left: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.update-btn:hover {
+    background-color: #007c9a;
+}
+
+
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .footer-left, .footer-right {
+            flex: 1;
+            text-align: left;
+        }
+        footer h3 {
+            border-bottom: 2px solid #fff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+        .social-icon {
+            width: 25px;
+            height: 25px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-title">
+            <img src='https://cdn-icons-png.flaticon.com/512/4807/4807695.png' alt="Mediease Logo" class="logo">
+            <div class="header-title">
+                <h1>MEDIEASE</h1>
+            </div>
+        </div>
+        <nav>
+            <a href="login" class="login-btn">Login</a>
+            <a href="signup" class="signup-btn">Signup</a>
+        </nav>
+    </header>
+    <ul>
+        <li>
+            <nav class="hel">
+            <a href="/homepage">
+                <img src='https://cdn-icons-png.flaticon.com/512/9385/9385212.png' alt="Home Icon" class="home-icon">
+                Home
+            </a>
+        </li>
+        <li>
+            <a class="100" href="#">
+                <img src='https://cdn-icons-png.flaticon.com/512/2875/2875035.png' alt="Home Icon" class="home-icon">
+                 Doctor Consultancy 
+                </a>
+            <ul class="sub-menu">
+                <li><a href="#">Virtual Meet</a></li>
+                <li><a href="/bookanappointment">Book an Appointment</a></li>
+            </ul>
+        </li>
+        <li><a href="/userprofile"> User Profile </a></li>
+        <li><a href="#"> Fitness </a>
+        <ul class="sub-menu">
+            <li><a href="walking">Walking</a></li>
+            <li><a href="exercise">Exercise</a></li>
+            <li><a href="/">Mediease AI</a></li>
+            <li><a href="waterdrop">Drinking Water</a></li>
+            <li><a href="/cycle">Cycling</a></li>
+            <li><a href="bodymassindex">BMI(Body Mass Index)</a></li>
+        </ul>
+    </li>
+        <li><a href="about"> 
+            <img src='https://cdn-icons-png.flaticon.com/512/52/52349.png' alt="Home Icon" class="home-icon">
+            About 
+        </a></li>
+        <li><a href="contactus">
+            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+<lord-icon
+    src="https://cdn.lordicon.com/ojnjgkun.json"
+    trigger="hover"
+    style="width:27px;height:27px"
+    alt="Home Icon" class="home-icon">
+</lord-icon>         
+            Contact Us </a></li>
+    </nav>
+    </ul>    
+    <div class="profile-box">
+        <div class="profile-header">
+            <h2>Profile Details</h2>
+        </div>
+        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-photo">
+        <div class="profile-info">
+            <div>
+                <label>First Name:</label>
+                <input type="text" placeholder="First Name" style="margin-right: 10px;">
+                <button class="update-btn">Update</button>
+            </div>
+            <div>
+                <label>Last Name:</label>
+                <input type="text" placeholder="Last Name" style="margin-right: 10px;">
+                <button class="update-btn">Update</button>
+            </div>
+            <div>
+                <label>Email:</label>
+                <input type="text" placeholder="Email" style="margin-right: 10px;">
+                <button class="update-btn">Update</button>
+            </div>
+            <div>
+                <label>Phone:</label>
+                <input type="text" placeholder="Phone" style="margin-right: 10px;">
+                <button class="update-btn">Update</button>
+            </div>
+            <div>
+                <label>City:</label>
+                <input type="text" placeholder="City" style="margin-right: 10px;">
+                <button class="update-btn">Update</button>
+            </div>
+            <div>
+                <label>Country:</label>
+                <input type="text" placeholder="Country" style="margin-right: 10px;">
+                <button class="update-btn">Update</button>
+            </div>
+            <div>
+                <label>Pincode:</label>
+                <input type="text" placeholder="Pincode" style="margin-right: 10px;">
+                <button class="update-btn">Update</button>
+            </div>
+            <div>
+                <label>Status:</label>
+                <input type="text" placeholder="Doctor/Patient" style="margin-right: 10px;">
+                <button class="update-btn">Update</button>
+            </div>
+        </div>
+    </div>
+    <footer class="c-footer">
+        <div class="footer-left">
+            <h3>Connect with Us</h3>
+            <!-- Add social media icons/links here -->
+            <a href="https://www.instagram.com/mediease_ts/" target="_blank">
+                <img src='https://cdn.discordapp.com/attachments/1143051446489731154/1195393851251241100/icons8-facebook-96.png?ex=65b3d447&is=65a15f47&hm=82cdb082d07c7a9af8a97f46d5ec6d735e734660c156edcdb97ea0644e796b3f&' alt="Facebook Icon" class="social-icon">
+                Facebook
+            </a>
+            <br>
+            <a href="https://www.instagram.com/mediease_ts/" target="_blank">
+                <img src='https://cdn.discordapp.com/attachments/1143051446489731154/1195395290526666762/icons8-instagram-96.png?ex=65b3d59e&is=65a1609e&hm=ef5337e5f7533123eed2d04b9968add557672e366bdf8d76e2486279fe31a111&' alt="Facebook Icon" class="social-icon">
+                Instagram
+            </a>
+            <br>
+            <a href="https://www.youtube.com/@Cure_Craft" target="_blank">
+                <img src='https://cdn.discordapp.com/attachments/1143051446489731154/1195395145961590784/icons8-youtube-96.png?ex=65b3d57c&is=65a1607c&hm=1962a969c1426c70edeab88ef8d9a3f1154bc0f4b64099cbcab7876ba843ab57&' alt="Facebook Icon" class="social-icon">
+                YouTube
+            </a>
+        </div>
+        <div class="footer-right">
+            <h3>Contact Information</h3>
+            <!-- Add contact information here -->
+            <p>Email: help.mediease@gmail.com</p>
+            <p>Phone: +91 76010 69687, +91 81215 82817</p>
+        </div>
+    </footer>
+</body>
+</html>

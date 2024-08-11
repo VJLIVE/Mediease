@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mediease AI</title>
+  <link rel="icon" type="image/x-icon" href="https://media.discordapp.net/attachments/1143051446489731154/1195279835736580136/WhatsApp_Image_2024-01-11_at_23.05.11_9c267feb-removebg-preview.png?ex=65b36a18&is=65a0f518&hm=8b6a8501054f599719b4216d004c5cdb73d5da92a91c0a7e733690411029df4b&=&format=webp&quality=lossless&width=666&height=558">
+  <style>
+    .container {
+      width: 900px; /* Adjust the width as needed */
+      margin: 30px auto; /* Centers the box horizontally */
+      padding: 20px;
+      margin-top: 40px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(white, #bae7ff);
+      background-repeat: no-repeat;
+      background-size: cover;
+      object-fit: cover;
+      
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .logo-title {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+        .header-title {
+            display: block;
+            font-size: x-large;
+        }
+        .heading {
+            margin: 0;
+            font-size: 3rem;
+            -webkit-text-stroke: 1px black ;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: transparent;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #00a6ff;
+        }
+        li {
+            float: left;
+        }
+        li a {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.4rem;
+            padding: 14px 16px;
+            transition: background-color 0.3s;
+        }
+        li a:hover {
+            background-color: #ffffff;
+            color: #00a6ff;
+        }
+        .login-btn,
+.signup-btn {
+    background-color: #00a6ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-right: 10px;
+    text-decoration: none; /* Add this line to remove underlines */
+}
+.login-btn:hover,
+.signup-btn:hover {
+    background-color: #ececec;
+            color: #00a6ff;
+            transition: 0.5s;
+}
+        .home-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+        .sub-menu {
+            display: none;
+            position: absolute;
+            background-color: #00a6ff;
+            z-index: 1;
+        }
+        li:hover .sub-menu {
+            display: block;
+        }
+        .sub-menu li {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+        .sub-menu li a {
+            padding: 12px 16px;
+            color: rgb(255, 255, 255);
+        }
+        .sub-menu li a:hover {
+            background-color: #ffffff;
+            color: #00a6ff;
+        }
+        .body-title{
+            text-align: center;
+        }
+
+    main {
+      padding: 20px;
+    }
+
+    .chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 300px; /* Adjust the height as needed */
+  overflow-y: scroll;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #00a6ff #f0f0f0; /* For Firefox */
+}
+
+/* Webkit browsers (Chrome, Safari) */
+.chat-container::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+  display: none;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+  background-color: #00a6ff; /* Color of the scrollbar handle */
+  border-radius: 10px; /* Rounded corners */
+  border: 2px solid #f0f0f0; /* Border around the scrollbar handle */
+}
+
+.chat-container::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Background of the scrollbar track */
+  border-radius: 10px; /* Rounded corners */
+}
+.chat-container::-webkit-scrollbar-button {
+  display: none; /* Hide scrollbar buttons (arrows) */
+}
+.chat-container {
+  overflow: -moz-scrollbars-none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+    .chat-bubble {
+      max-width: 70%;
+      margin: 10px;
+      padding: 10px 15px;
+      border-radius: 20px;
+      clear: both;
+    }
+
+    .user {
+      background-color: #f0f0f0;
+      margin-left: auto;
+    }
+
+    .ai {
+      background-color: rgb(114, 114, 137);
+      float: left;
+      color:#fff
+    }
+
+    .user-input {
+        margin-top: 20px;
+  display: flex; /* Add flex display */
+  justify-content: center; /* Align items horizontally to the center */
+  align-items: center; /* Align items vertically to the center */
+    }
+
+    .user-input input[type="text"] {
+        width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+    }
+
+/* From Uiverse.io by vinodjangid07 */ 
+.Btn {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(#44ea76, #39fad7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  border: none;
+}
+
+.arrow path {
+  fill: white;
+}
+
+.text {
+  font-size: 0.7em;
+  width: 100px;
+  position: absolute;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: -18px;
+  opacity: 0;
+  transition-duration: .7s;
+}
+
+.Btn:hover .text {
+  opacity: 1;
+  transition-duration: .7s;
+}
+
+.Btn:hover .arrow {
+  animation: slide-in-bottom .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+    footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .footer-left, .footer-right {
+            flex: 1;
+            text-align: left;
+        }
+        footer h3 {
+            border-bottom: 2px solid #fff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+        .social-icon {
+            width: 25px;
+            height: 25px;
+            margin-right: 5px;
+        }
+          marquee {
+            background-color:rgb(114, 114, 137) ;
+            border-radius: 2px;
+            color:#fff;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            
+        }
+  </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-title">
+            <img src='https://cdn-icons-png.flaticon.com/512/4807/4807695.png' alt="Mediease Logo" class="logo">
+            <div class="header-title">
+                <h1>MEDIEASE</h1>
+            </div>
+        </div>
+        <nav>
+            <a href="login" class="login-btn">Login</a>
+            <a href="signup" class="signup-btn">Signup</a>
+        </nav>
+    </header>
+    <ul>
+        <li>
+            <nav class="hel">
+            <a href="/homepage">
+                <img src='https://cdn-icons-png.flaticon.com/512/9385/9385212.png' alt="Home Icon" class="home-icon">
+                Home
+            </a>
+        </li>
+        <li>
+            <a class="100" href="#">
+                <img src='https://cdn-icons-png.flaticon.com/512/2875/2875035.png' alt="Home Icon" class="home-icon">
+                 Doctor Consultancy 
+                </a>
+            <ul class="sub-menu">
+                <li><a href="/bookanappointment">Book an Appointment</a></li>
+              <li><a href="/virtualmeet">Virtual Meet</a></li>
+            </ul>
+        </li>
+        <li><a href="/userprofile"> User Profile </a></li>
+        <li><a href="#"> Fitness </a>
+        <ul class="sub-menu">
+            <li><a href="/walking">Walking</a></li>
+            <li><a href="/exercise">Exercise</a></li>
+            <li><a href="/">Mediease AI</a></li>
+            <li><a href="waterdrop">Drinking Water</a></li>
+            <li><a href="/cycle">Cycling</a></li>
+            <li><a href="/bodymassindex">BMI(Body Mass Index)</a></li>
+        </ul>
+    </li>
+        <li><a href="about"> 
+            <img src='https://cdn-icons-png.flaticon.com/512/52/52349.png' alt="Home Icon" class="home-icon">
+            About 
+        </a></li>
+        <li><a href="/contactus">
+            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+<lord-icon
+    src="https://cdn.lordicon.com/ojnjgkun.json"
+    trigger="hover"
+    style="width:27px;height:27px"
+    alt="Home Icon" class="home-icon">
+</lord-icon>         
+            Contact Us </a></li>
+    </nav>
+    <br>
+    </ul> 
+
+<br>
+  <div class="container">
+    <header>
+      <h1 class="heading">MEDIEASE AI</h1>
+    </header>
+    
+    <main>
+      <section class="chat-container">
+        <div class="chat-bubble user">Hello, AI!</div>
+        <div class="chat-bubble ai">Hi there! How can I assist you today?</div>
+        <!-- Additional chat bubbles can be added dynamically -->
+      </section>
+      
+      <section class="user-input">
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button class="Btn" onclick="sendMessage()">
+          <svg height="1.2em" class="arrow" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>
+          <p class="text">Send</p>
+        </button>
+      </section>
+      
+    </main>
+  </div>
+  <footer class="c-footer">
+    <div class="footer-left">
+        <h3>Connect with Us</h3>
+        <!-- Add social media icons/links here -->
+        <a href="https://www.instagram.com/mediease_ts/" target="_blank">
+            <img src='https://cdn.discordapp.com/attachments/1143051446489731154/1195393851251241100/icons8-facebook-96.png?ex=65b3d447&is=65a15f47&hm=82cdb082d07c7a9af8a97f46d5ec6d735e734660c156edcdb97ea0644e796b3f&' alt="Facebook Icon" class="social-icon">
+            Facebook
+        </a>
+        <br>
+        <a href="https://www.instagram.com/mediease_ts/" target="_blank">
+            <img src='https://cdn.discordapp.com/attachments/1143051446489731154/1195395290526666762/icons8-instagram-96.png?ex=65b3d59e&is=65a1609e&hm=ef5337e5f7533123eed2d04b9968add557672e366bdf8d76e2486279fe31a111&' alt="Facebook Icon" class="social-icon">
+            Instagram
+        </a>
+        <br>
+        <a href="https://www.youtube.com/@Cure_Craft" target="_blank">
+            <img src='https://cdn.discordapp.com/attachments/1143051446489731154/1195395145961590784/icons8-youtube-96.png?ex=65b3d57c&is=65a1607c&hm=1962a969c1426c70edeab88ef8d9a3f1154bc0f4b64099cbcab7876ba843ab57&' alt="Facebook Icon" class="social-icon">
+            YouTube
+        </a>
+    </div>
+    <div class="footer-right">
+        <h3>Contact Information</h3>
+        <!-- Add contact information here -->
+        <p>Email: help.mediease@gmail.com</p>
+        <p>Phone: +91 76010 69687, +91 81215 82817</p>
+    </div>
+</footer>
+<script>
+    function sendMessage() {
+        var userInput = document.getElementById('user-input').value;
+        addChatBubble('user', userInput);
+
+        // Display loading icon
+        var loadingBubble = document.createElement('div');
+        loadingBubble.classList.add('chat-bubble', 'loading');
+        loadingBubble.innerHTML = '<img src="https://media.tenor.com/i2-B8Y4_oaYAAAAi/game-on-load-server.gif" alt="Loading...">';
+        var chatContainer = document.querySelector('.chat-container');
+        chatContainer.appendChild(loadingBubble);
+
+        // Clear the input field
+        document.getElementById('user-input').value = '';
+
+        fetch('/generate_response', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ prompt: userInput }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            var aiResponse = data.response;
+            addChatBubble('ai', aiResponse);
+            
+            // Remove loading icon
+            chatContainer.removeChild(loadingBubble);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Remove loading icon
+            chatContainer.removeChild(loadingBubble);
+        });
+    }
+
+    function addChatBubble(sender, message) {
+        var chatContainer = document.querySelector('.chat-container');
+        var chatBubble = document.createElement('div');
+        chatBubble.classList.add('chat-bubble', sender);
+        
+        // Regular expression to match **bold** words
+        var boldRegex = /\*\*(.*?)\*\*/g;
+        var matches;
+        var lastIndex = 0;
+        
+        // Loop through each match of the bold pattern
+        while ((matches = boldRegex.exec(message)) !== null) {
+            // Create a text node for the non-bold part of the message
+            var textNode = document.createTextNode(message.substring(lastIndex, matches.index));
+            chatBubble.appendChild(textNode);
+            
+            // Create a span element for the bold part of the message
+            var boldSpan = document.createElement('span');
+            boldSpan.style.fontWeight = 'bold';
+            boldSpan.textContent = matches[1];
+            chatBubble.appendChild(boldSpan);
+            
+            // Update the lastIndex to continue searching for matches
+            lastIndex = boldRegex.lastIndex;
+        }
+        
+        // Add any remaining non-bold part of the message
+        var remainingText = message.substring(lastIndex);
+        var remainingTextNode = document.createTextNode(remainingText);
+        chatBubble.appendChild(remainingTextNode);
+        
+        // Replace line breaks with <br> tags to ensure each point starts on a new line
+        chatBubble.innerHTML = chatBubble.innerHTML.replace(/\n/g, '<br>');
+
+        chatContainer.appendChild(chatBubble);
+        chatBubble.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }
+</script>
+</body>
+</html>
