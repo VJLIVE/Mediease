@@ -1,0 +1,349 @@
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex-start;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 140vh;
+            background-image: url('https://media.discordapp.net/attachments/1143051446489731154/1195279836403482634/luxa.org-opacity-changed-Screenshot_2024-01-11_231442.png?ex=65b36a18&is=65a0f518&hm=3a2f4c2536ba5f9cb6c153939851fe57df2fee60e996f76de777ce0c2c97501c&=&format=webp&quality=lossless&width=1005&height=558');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #ffffff;
+            box-sizing: border-box;
+        }
+
+        .logo-title {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+
+        .header-title {
+            display: block;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3rem;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #00a6ff;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.4rem;
+            padding: 14px 16px;
+            transition: background-color 0.3s;
+        }
+
+        li a:hover {
+            background-color: #0078a0;
+        }
+
+        .login-btn,
+        .signup-btn {
+            background-color: #00a6ff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+
+        .login-btn:hover,
+        .signup-btn:hover {
+            background-color: #007c9a;
+        }
+
+        .home-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .sub-menu {
+            display: none;
+            position: absolute;
+            background-color: #00a6ff;
+            z-index: 1;
+        }
+
+        li:hover .sub-menu {
+            display: block;
+        }
+
+        .sub-menu li {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+
+        .sub-menu li a {
+            padding: 12px 16px;
+            color: white;
+        }
+
+        .sub-menu li a:hover {
+            background-color: #0078a0;
+        }
+
+        .body-title {
+            text-align: center;
+        }
+
+        .calculator {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 500px; /* Adjust the width as needed */
+            height: 500px;
+            margin-bottom: 100px;
+            margin-left: 20px;
+            background-image: url('https://images.ctfassets.net/co0pvta7hzrh/1V1JD4VNqudiLXFleKPtPy/f472f87ffd0a247a8cb58232fbc2a485/project-consultation-form-template-i4ufz8od-thumbnail.png');
+            background-size: cover;
+        }
+
+        label {
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            color: black;
+        }
+
+        #result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .height-meter {
+            margin-top: 20px;
+        }
+
+        .meter {
+            width: 100%;
+            height: 20px;
+            background-color: #ddd;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .meter::before {
+            content: "";
+            width: 2px;
+            height: 16px;
+            background-color: #333;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .bmi-gauge {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .gauge-reading {
+            width: 80px;
+            text-align: center;
+        }
+
+        #underweight {
+            color: #e74c3c;
+        }
+
+        #normal {
+            color: #2ecc71;
+        }
+
+        #overweight {
+            color: #f39c12;
+        }
+
+        #obese {
+            color: #e67e22;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-left, .footer-right {
+            flex: 1;
+            text-align: left;
+        }
+
+        footer h3 {
+            border-bottom: 2px solid #fff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .social-icon {
+            width: 25px;
+            height: 25px;
+            margin-right: 5px;
+        }
+
+        /* speedometer */
+        .parent {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background-image: url('https://cdn.discordapp.com/attachments/1271876094324248748/1272105003628236840/bmi-scale.jpg?ex=66b9c39b&is=66b8721b&hm=2decf1a82205064cf92c2d2455a1e04a867ef6a28f0be4e5c4be3054b020e0bd&');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .needle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 150px;
+            width: 6px;
+            background-color: red;
+            transform-origin: 50% 100%;
+            transform: translate(-50%, -100%) rotate(0deg);
+            transition: transform 1s ease-in-out;
+            z-index: 2;
+        }
+
+        .readings {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+        }
+      
+
+        .bmi-input {
+            margin-top: 0px;
+            text-align: center;
+        }
+        .tableofbmi{
+
+margin-left: -45px;
+display: flex;
+         text-align: center;
+margin-top: 45%;
+        }
+        .mat{
+          
+            color:black;
+      
+           
+        }
+        #blue{
+            background-color: #007c9a;
+            margin-right: 20px;
+          
+            height:70px;
+width:100px;
+margin-left:-40px;
+
+        }
+        #green{
+            background-color: green;
+            margin-right: 10px;
+            height:70px;
+           
+            width:100px;
+        }
+        #orange{
+            background-color: orangered;
+            margin-right: 20px;
+            height:70px;
+                       width:100px;
+        }
+        #red{
+            background-color: red;
+            height:70px;
+width:100px;
+        }
+        marquee{
+            font-size:medium;
+            background-color: grey;
+            color: #fff;
+        }
+    </style>
